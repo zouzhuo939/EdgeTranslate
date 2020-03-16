@@ -231,6 +231,10 @@
         "message": "Развернуть настройки языка",
         "description": "Развернуть параметры настройки языка"
     },
+    "ToFirefoxUsersLink": {
+        "message": "https://github.com/EdgeTranslate/EdgeTranslate/blob/fftf/docs/wiki/en/ToFirefoxUsers.md",
+        "description": "Link of a letter to Firefox users."
+    },
     "Afrikaans": {
         "message": "Afrikaans",
         "description": "Afrikaans"

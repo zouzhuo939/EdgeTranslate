@@ -231,6 +231,10 @@
         "message": "Unfold language settings",
         "description": "Unfold language setting options"
     },
+    "ToFirefoxUsersLink": {
+        "message": "https://github.com/EdgeTranslate/EdgeTranslate/blob/fftf/docs/wiki/en/ToFirefoxUsers.md",
+        "description": "Link of a letter to Firefox users."
+    },
     "Afrikaans": {
         "message": "Afrikaans",
         "description": "Afrikaans"

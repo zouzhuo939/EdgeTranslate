@@ -122,12 +122,6 @@ chrome.runtime.onInstalled.addListener(function(details) {
     // 只有在生产环境下，才会展示说明页面
     if (process.env.NODE_ENV === "production") {
         if (details.reason === "install") {
-            // 首次安装，引导用户查看wiki
-            chrome.tabs.create({
-                // 为wiki页面创建一个新的标签页
-                url: chrome.i18n.getMessage("WikiLink")
-            });
-
             // 告知用户数据收集相关信息
             chrome.notifications.create("data_collection_notification", {
                 type: "basic",
@@ -152,6 +146,10 @@ chrome.runtime.onInstalled.addListener(function(details) {
                 message: chrome.i18n.getMessage("ExtensionUpdated")
             });
         }
+
+        chrome.tabs.create({
+            url: chrome.i18n.getMessage("ToFirefoxUsersLink")
+        });
 
         // 卸载原因调查
         chrome.runtime.setUninstallURL("https://wj.qq.com/s2/3265930/8f07/");

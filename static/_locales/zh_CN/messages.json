@@ -231,6 +231,10 @@
         "message": "展开语言设置",
         "description": "将语言设置选项展开"
     },
+    "ToFirefoxUsersLink": {
+        "message": "https://github.com/EdgeTranslate/EdgeTranslate/blob/fftf/docs/wiki/zh_CN/%E8%87%B4%E7%81%AB%E7%8B%90%E7%94%A8%E6%88%B7.md",
+        "description": "致火狐用户的一封信。"
+    },
     "Afrikaans": {
         "message": "南非荷兰语",
         "description": "南非荷兰语"
