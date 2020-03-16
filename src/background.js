@@ -1,11 +1,11 @@
 import {
     translate,
     showTranslate,
-    pronounce,
-    translatePage,
-    youdaoPageTranslate,
-    executeYouDaoScript,
-    executeGoogleScript
+    pronounce
+    // translatePage,
+    // youdaoPageTranslate,
+    // executeYouDaoScript,
+    // executeGoogleScript
 } from "./lib/scripts/translate.js";
 import {
     addUrlBlacklist,
@@ -62,23 +62,23 @@ chrome.runtime.onInstalled.addListener(function(details) {
         contexts: ["browser_action"]
     });
 
-    chrome.contextMenus.create({
-        id: "translate_page",
-        title: chrome.i18n.getMessage("TranslatePage"),
-        contexts: ["page"]
-    });
+    // chrome.contextMenus.create({
+    //     id: "translate_page",
+    //     title: chrome.i18n.getMessage("TranslatePage"),
+    //     contexts: ["page"]
+    // });
 
-    chrome.contextMenus.create({
-        id: "translate_page_youdao",
-        title: chrome.i18n.getMessage("TranslatePageYouDao"),
-        contexts: ["browser_action"]
-    });
+    // chrome.contextMenus.create({
+    //     id: "translate_page_youdao",
+    //     title: chrome.i18n.getMessage("TranslatePageYouDao"),
+    //     contexts: ["browser_action"]
+    // });
 
-    chrome.contextMenus.create({
-        id: "translate_page_google",
-        title: chrome.i18n.getMessage("TranslatePageGoogle"),
-        contexts: ["browser_action"]
-    });
+    // chrome.contextMenus.create({
+    //     id: "translate_page_google",
+    //     title: chrome.i18n.getMessage("TranslatePageGoogle"),
+    //     contexts: ["browser_action"]
+    // });
 
     chrome.contextMenus.create({
         id: "add_url_blacklist",
@@ -245,23 +245,23 @@ chrome.runtime.onStartup.addListener(function() {
         contexts: ["browser_action"]
     });
 
-    chrome.contextMenus.create({
-        id: "translate_page",
-        title: chrome.i18n.getMessage("TranslatePage"),
-        contexts: ["page"]
-    });
+    // chrome.contextMenus.create({
+    //     id: "translate_page",
+    //     title: chrome.i18n.getMessage("TranslatePage"),
+    //     contexts: ["page"]
+    // });
 
-    chrome.contextMenus.create({
-        id: "translate_page_youdao",
-        title: chrome.i18n.getMessage("TranslatePageYouDao"),
-        contexts: ["browser_action"]
-    });
+    // chrome.contextMenus.create({
+    //     id: "translate_page_youdao",
+    //     title: chrome.i18n.getMessage("TranslatePageYouDao"),
+    //     contexts: ["browser_action"]
+    // });
 
-    chrome.contextMenus.create({
-        id: "translate_page_google",
-        title: chrome.i18n.getMessage("TranslatePageGoogle"),
-        contexts: ["browser_action"]
-    });
+    // chrome.contextMenus.create({
+    //     id: "translate_page_google",
+    //     title: chrome.i18n.getMessage("TranslatePageGoogle"),
+    //     contexts: ["browser_action"]
+    // });
 
     chrome.contextMenus.create({
         id: "add_url_blacklist",
@@ -307,15 +307,15 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
                 showTranslate(result, tab);
             }); // 此api位于 translate.js中
             break;
-        case "translate_page":
-            translatePage();
-            break;
-        case "translate_page_youdao":
-            executeYouDaoScript();
-            break;
-        case "translate_page_google":
-            executeGoogleScript();
-            break;
+        // case "translate_page":
+        //     translatePage();
+        //     break;
+        // case "translate_page_youdao":
+        //     executeYouDaoScript();
+        //     break;
+        // case "translate_page_google":
+        //     executeGoogleScript();
+        //     break;
         case "shortcut":
             chrome.tabs.create({
                 url: "chrome://extensions/shortcuts"
@@ -378,9 +378,9 @@ chrome.runtime.onMessage.addListener(function(message, sender, callback) {
             case "pronounce":
                 pronounce(message.text, message.language, message.speed, callback);
                 break;
-            case "youdao_page_translate":
-                youdaoPageTranslate(message.request, callback);
-                break;
+            // case "youdao_page_translate":
+            //     youdaoPageTranslate(message.request, callback);
+            //     break;
             case "get_lang":
                 callback({ lang: chrome.i18n.getUILanguage() });
                 break;
@@ -400,9 +400,9 @@ chrome.runtime.onMessage.addListener(function(message, sender, callback) {
  */
 chrome.commands.onCommand.addListener(function(command) {
     switch (command) {
-        case "translate_page":
-            translatePage();
-            break;
+        // case "translate_page":
+        //     translatePage();
+        //     break;
         default:
             sendMessageToCurrentTab({
                 type: "command",
